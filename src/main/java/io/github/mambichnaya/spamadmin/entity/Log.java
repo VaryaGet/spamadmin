@@ -3,6 +3,7 @@ package io.github.mambichnaya.spamadmin.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDateTime;
@@ -24,9 +25,8 @@ public class Log {
     @JoinColumn(name = "chat_id", nullable = false)
     private Chat chat;
 
-    @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)
-    private LocalDateTime createdAt;
+    private LocalDateTime createdAt = LocalDateTime.now();
 
     @Column(nullable = false)
     private String log;

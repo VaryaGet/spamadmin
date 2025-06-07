@@ -47,7 +47,7 @@ public class SettingController {
         var log = new Log();
         log.setAdmin(admin);
         log.setChat(chat);
-        log.setLog("Add chat and admin connection");
+        log.setLog("Авторизован админ");
         logRepository.save(log);
     }
 
