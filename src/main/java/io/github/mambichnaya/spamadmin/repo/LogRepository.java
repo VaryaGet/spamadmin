@@ -1,7 +1,14 @@
 package io.github.mambichnaya.spamadmin.repo;
 
+import io.github.mambichnaya.spamadmin.dto.StatDto;
 import io.github.mambichnaya.spamadmin.entity.Log;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import java.util.List;
 
 public interface LogRepository extends JpaRepository<Log, Long> {
+    @Query("SELECT new io.github.mambichnaya.spamadmin.dto.StatDto(c.tgId,a.tgId, l.log,l.createdAt) FROM Log l join Chat c on l.chat.id = c.id join Admin a on l.admin.id = a.id WHERE l.chat.id in :chatIds")
+    List<StatDto> findByChats(@Param("chatIds") Long[] chatIds);
 }

@@ -8,5 +8,5 @@ public interface ChatRepository extends JpaRepository<Chat, Long> {
     Chat findByTgId(Long chatId);
     Boolean existsByTgId(Long chatId);
 
-    SettingsDto getByTgId(Long tgId);
+    Chat getByTgId(Long tgId);
 }

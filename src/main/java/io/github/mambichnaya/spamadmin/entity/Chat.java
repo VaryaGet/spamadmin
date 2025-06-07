@@ -32,7 +32,7 @@ public class Chat {
     @Column(nullable = false)
     private boolean usernameCheck;
 
-    @ManyToMany(mappedBy = "admins", fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "chats", fetch = FetchType.LAZY)
     private Set<Admin> admins = new HashSet<>();
 
     @OneToMany(mappedBy = "log", fetch = FetchType.LAZY)

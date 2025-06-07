@@ -1,9 +1,6 @@
 package io.github.mambichnaya.spamadmin.controller;
 
-import io.github.mambichnaya.spamadmin.dto.AddChatDto;
-import io.github.mambichnaya.spamadmin.dto.ChatDto;
-import io.github.mambichnaya.spamadmin.dto.CopyChat;
-import io.github.mambichnaya.spamadmin.dto.SettingsDto;
+import io.github.mambichnaya.spamadmin.dto.*;
 import io.github.mambichnaya.spamadmin.entity.Admin;
 import io.github.mambichnaya.spamadmin.entity.Chat;
 import io.github.mambichnaya.spamadmin.entity.Log;
@@ -19,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashSet;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/settings")
@@ -55,8 +53,8 @@ public class SettingController {
 
     @PostMapping("getSettings")
     public SettingsDto getSettings(@RequestBody ChatDto chatDto) {
-        var chat = chatRepository.getByTgId(chatDto.getChatId());
-        var settings = new SettingsDto();
+        Chat chat = chatRepository.getByTgId(chatDto.getChatId());
+        SettingsDto settings = new SettingsDto();
         settings.setChatId(chatDto.getChatId());
         settings.setUsernameCheck(chat.isUsernameCheck());
         settings.setDbCheck(chat.isDbCheck());
@@ -138,6 +136,14 @@ public class SettingController {
             log.setLog(chatLog(chat));
             logRepository.save(log);
         }
+    }
+
+    @PostMapping("stat")
+    public StatDto[] getStats(@RequestBody AdminDto adminDto)  {
+
+        var admin = adminRepository.findByTgId(adminDto.getAdminId());
+        Long[] ids = admin.getChats().stream().map(Chat::getId).toArray(Long[]::new);
+        return logRepository.findByChats(ids).toArray(StatDto[]::new);
     }
 
     private String chatLog(Chat chat) {
