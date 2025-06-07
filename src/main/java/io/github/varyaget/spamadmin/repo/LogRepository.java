@@ -1,7 +1,7 @@
-package io.github.mambichnaya.spamadmin.repo;
+package io.github.varyaget.spamadmin.repo;
 
-import io.github.mambichnaya.spamadmin.dto.StatDto;
-import io.github.mambichnaya.spamadmin.entity.Log;
+import io.github.varyaget.spamadmin.dto.StatDto;
+import io.github.varyaget.spamadmin.entity.Log;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

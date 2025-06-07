@@ -1,4 +1,4 @@
-package io.github.mambichnaya.spamadmin.entity;
+package io.github.varyaget.spamadmin.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

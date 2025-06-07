@@ -1,4 +1,4 @@
-package io.github.mambichnaya.spamadmin;
+package io.github.varyaget.spamadmin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

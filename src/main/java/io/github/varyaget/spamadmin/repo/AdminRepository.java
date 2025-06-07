@@ -1,6 +1,6 @@
-package io.github.mambichnaya.spamadmin.repo;
+package io.github.varyaget.spamadmin.repo;
 
-import io.github.mambichnaya.spamadmin.entity.Admin;
+import io.github.varyaget.spamadmin.entity.Admin;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AdminRepository extends JpaRepository<Admin, Long> {

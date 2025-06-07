@@ -1,12 +1,12 @@
-package io.github.mambichnaya.spamadmin.controller;
+package io.github.varyaget.spamadmin.controller;
 
-import io.github.mambichnaya.spamadmin.dto.*;
-import io.github.mambichnaya.spamadmin.entity.Admin;
-import io.github.mambichnaya.spamadmin.entity.Chat;
-import io.github.mambichnaya.spamadmin.entity.Log;
-import io.github.mambichnaya.spamadmin.repo.AdminRepository;
-import io.github.mambichnaya.spamadmin.repo.ChatRepository;
-import io.github.mambichnaya.spamadmin.repo.LogRepository;
+import io.github.varyaget.spamadmin.dto.*;
+import io.github.varyaget.spamadmin.entity.Admin;
+import io.github.varyaget.spamadmin.entity.Chat;
+import io.github.varyaget.spamadmin.entity.Log;
+import io.github.varyaget.spamadmin.repo.AdminRepository;
+import io.github.varyaget.spamadmin.repo.ChatRepository;
+import io.github.varyaget.spamadmin.repo.LogRepository;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.apache.coyote.BadRequestException;
@@ -14,9 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.HashSet;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/settings")

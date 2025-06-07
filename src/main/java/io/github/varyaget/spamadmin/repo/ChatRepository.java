@@ -1,7 +1,6 @@
-package io.github.mambichnaya.spamadmin.repo;
+package io.github.varyaget.spamadmin.repo;
 
-import io.github.mambichnaya.spamadmin.dto.SettingsDto;
-import io.github.mambichnaya.spamadmin.entity.Chat;
+import io.github.varyaget.spamadmin.entity.Chat;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ChatRepository extends JpaRepository<Chat, Long> {

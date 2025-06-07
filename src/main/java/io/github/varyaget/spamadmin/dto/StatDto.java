@@ -1,4 +1,4 @@
-package io.github.mambichnaya.spamadmin.dto;
+package io.github.varyaget.spamadmin.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
